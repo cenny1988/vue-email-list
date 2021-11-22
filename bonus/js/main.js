@@ -14,16 +14,22 @@ var app = new Vue({
         emails:[],
     },
     mounted(){
-        const self = this;
+        // const self = this;
         // chiamiata get su api boolean
         // creiamo un for di 10 obj ed inseriamo ogni email nell'array emails inizialmente vuoto 
         for( i=0; i<10; i++ ) {
             
+            // metodo 1 - NB decommentare riga 17
+            // axios
+            // .get('https://flynn.boolean.careers/exercises/api/random/mail')
+            // .then(function(risultato){
+            //     self.emails.push(risultato.data.response);
+            // });
+
+            // metodo 2
             axios
             .get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(function(risultato){
-                self.emails.push(risultato.data.response);
-            });
+            .then( risultato => this.emails.push(risultato.data.response));
 
         };
     },
