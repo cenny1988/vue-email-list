@@ -8,7 +8,9 @@
 </head>
 <body>
     <div id="app">
-        {{emails}}
+        <u>
+            <li v-for="email, i in emails">{{email}}</li>
+        </u>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
