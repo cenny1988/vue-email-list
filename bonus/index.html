@@ -8,8 +8,11 @@
 </head>
 <body>
     <div id="app">
-        <ul>
+        <ul v-if="emails.length === 10">
             <li v-for="email, i in emails">{{email}}</li>
+        </ul>
+        <ul v-else>
+            <li> Lista emails ancora non pronta...</li>
         </ul>
     </div>
 
